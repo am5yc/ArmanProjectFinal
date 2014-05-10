@@ -210,7 +210,7 @@ public class minesweeper
             {
                 return;
             }
-            else if (getTiles(r, c) == 1  && t == 0)
+            else if (getTiles(r, c) == 1  && t == 0 && getMines(r, c) == 0)
             {
                 this.markTile(r-1,c-1,0);
                 this.markTile(r-1,c,0);
