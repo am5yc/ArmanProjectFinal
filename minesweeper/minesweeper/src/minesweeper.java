@@ -12,7 +12,7 @@
  * spring 2004<br>
  *<br>
  */
-public class Minesweeper
+public class minesweeper
 
 {
 
@@ -37,7 +37,7 @@ public class Minesweeper
      *  calculate clues<br>
      *  (*)set game status to play<br>   
      */
-    public Minesweeper() 
+    public minesweeper() 
     {
         initGame(9, 9);
     }
@@ -51,7 +51,7 @@ public class Minesweeper
      * @param newRows number of rows for grid<br>
      * @param newCols number of columns for grid<br>
      */
-    public Minesweeper(int newRows, int newCols) {
+    public minesweeper(int newRows, int newCols) {
         initGame(newRows, newCols);
     }
 
