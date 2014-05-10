@@ -344,53 +344,53 @@ public class Minesweeper
 	private void calculateClues()
         {
             for (int i=0; i<this.mines.length; i++)
-                    {
-                        for (int j=0; j<this.mines[i].length; j++)
-                        {
-                           if ((this.mines[i][j]) == 9)
-                           {
-                               if ((this.mines[i-1][j-1]) != 9 && validIndex(i-1,j-1))
-                               {
-                                   this.mines[i-1][j-1]++;
-                               }
-                               
-                               if ((this.mines[i][j-1]) != 9 && validIndex(i,j-1))
-                               {
-                                   this.mines[i][j-1]++;
-                               }
-                               
-                               if ((this.mines[i+1][j-1]) != 9 && validIndex(i+1,j-1))
-                               {
-                                   this.mines[i+1][j-1]++;
-                               }
-                               
-                               if ((this.mines[i-1][j]) != 9 && validIndex(i-1,j))
-                               {
-                                   this.mines[i-1][j]++;
-                               }
-                               
-                               if ((this.mines[i+1][j]) != 9 && validIndex(i+1,j))
-                               {
-                                   this.mines[i+1][j]++;
-                               }
-                               
-                               if ((this.mines[i-1][j+1]) != 9 && validIndex(i-1,j+1))
-                               {
-                                   this.mines[i-1][j+1]++;
-                               }
-                               
-                               if ((this.mines[i][j+1]) != 9 && validIndex(i,j+1))
-                               {
-                                   this.mines[i][j+1]++;
-                               }
-                               
-                               if ((this.mines[i+1][j+1]) != 9 && validIndex(i+1,j+1))
-                               {
-                                   this.mines[i+1][j+1]++;
-                               } 
-                           }
-                        }
-                    }
+            {
+                for (int j=0; j<this.mines[i].length; j++)
+                {
+                   if ((this.mines[i][j]) == 9)
+                   {
+                       if ((this.mines[i-1][j-1]) != 9 && validIndex(i-1,j-1))
+                       {
+                           this.mines[i-1][j-1]++;
+                       }
+
+                       if ((this.mines[i][j-1]) != 9 && validIndex(i,j-1))
+                       {
+                           this.mines[i][j-1]++;
+                       }
+
+                       if ((this.mines[i+1][j-1]) != 9 && validIndex(i+1,j-1))
+                       {
+                           this.mines[i+1][j-1]++;
+                       }
+
+                       if ((this.mines[i-1][j]) != 9 && validIndex(i-1,j))
+                       {
+                           this.mines[i-1][j]++;
+                       }
+
+                       if ((this.mines[i+1][j]) != 9 && validIndex(i+1,j))
+                       {
+                           this.mines[i+1][j]++;
+                       }
+
+                       if ((this.mines[i-1][j+1]) != 9 && validIndex(i-1,j+1))
+                       {
+                           this.mines[i-1][j+1]++;
+                       }
+
+                       if ((this.mines[i][j+1]) != 9 && validIndex(i,j+1))
+                       {
+                           this.mines[i][j+1]++;
+                       }
+
+                       if ((this.mines[i+1][j+1]) != 9 && validIndex(i+1,j+1))
+                       {
+                           this.mines[i+1][j+1]++;
+                       } 
+                   }
+                }
+            }
 
 	}
 
