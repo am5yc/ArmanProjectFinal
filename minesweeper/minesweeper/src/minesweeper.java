@@ -366,9 +366,13 @@ public class minesweeper
                        this.mines[i][j-1]++;
                    }
 
-                   if ((this.mines[i+1][j-1]) != 9 && validIndex(i+1,j-1))
+                   if (validIndex(i+1,j-1))
                    {
-                       this.mines[i+1][j-1]++;
+                       //If valid index
+                       if ((this.mines[i+1][j-1]) != 9) {
+                           //If not mine
+                           this.mines[i+1][j-1]++;
+                       }
                    }
 
                    if ((this.mines[i-1][j]) != 9 && validIndex(i-1,j))
@@ -376,9 +380,13 @@ public class minesweeper
                        this.mines[i-1][j]++;
                    }
 
-                   if ((this.mines[i+1][j]) != 9 && validIndex(i+1,j))
+                   if (validIndex(i+1,j))
                    {
-                       this.mines[i+1][j]++;
+                       //If valid index
+                       if ((this.mines[i+1][j]) != 9) {
+                           //If not mine
+                           this.mines[i+1][j]++;
+                       }
                    }
 
                    if ((this.mines[i-1][j+1]) != 9 && validIndex(i-1,j+1))
