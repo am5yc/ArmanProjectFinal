@@ -352,9 +352,13 @@ public class minesweeper
             {
                if ((this.mines[i][j]) == 9)
                {
-                   if ((this.mines[i-1][j-1]) != 9 && validIndex(i-1,j-1))
+                   if (validIndex(i-1,j-1))
                    {
-                       this.mines[i-1][j-1]++;
+                       //If valid index
+                       if ((this.mines[i-1][j-1]) != 9) {
+                           //If not mine
+                            this.mines[i-1][j-1]++;
+                       }
                    }
 
                    if ((this.mines[i][j-1]) != 9 && validIndex(i,j-1))
