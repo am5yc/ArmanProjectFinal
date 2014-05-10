@@ -223,8 +223,7 @@ public class minesweeper
             this.markTile(r,c+1,0);
             this.markTile(r+1,c-1,0);
             this.markTile(r+1,c,0);
-            this.markTile(r+1,c+1,0);
-            
+            this.markTile(r+1,c+1,0);  
         }
 
     }
