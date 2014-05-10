@@ -15,6 +15,9 @@
 public class minesweeper
 
 {
+    private int numMines;
+    private int numFlags;
+    
     private boolean gameWon;
     
     /** mine and clue values, 9 - mine, 0-8 clue values
@@ -318,6 +321,7 @@ public class minesweeper
     {
         this.status = "play";
         this.gameWon = false;
+        this.numFlags = 0;
         //reset tiles
         for (int i=0; i<this.tiles.length; i++)
         {
@@ -339,9 +343,9 @@ public class minesweeper
 
 
         int max = (1+((getRows()*getCols())/10));
-        int numMines = 0;
+        numMines = 0;
         int rondomNum = 0;
-
+        
         while (numMines < max)
         {
             for (int i=0; i<this.mines.length; i++)
