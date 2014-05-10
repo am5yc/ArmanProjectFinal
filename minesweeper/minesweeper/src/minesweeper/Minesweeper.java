@@ -321,17 +321,17 @@ public class Minesweeper
             while (numMines < max && numMines>0 )
             {
                 for (int i=0; i<this.mines.length; i++)
+                {
+                    for (int j=0; j<this.mines[i].length; j++)
                     {
-                        for (int j=0; j<this.mines[i].length; j++)
+                         rondomNum = (int) (Math.random() * 99) + 1;
+
+                        if ( rondomNum == 100 && (this.mines[i][j]) != 9 && numMines < max )
                         {
-                             rondomNum = (int) (Math.random() * 99) + 1;
-                            
-                            if ( rondomNum == 100 && (this.mines[i][j]) != 9 && numMines < max )
-                            {
-                                this.mines [i][j] = 9;
-                            }
+                            this.mines [i][j] = 9;
                         }
                     }
+                }
             }
             
 	}
