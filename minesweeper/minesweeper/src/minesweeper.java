@@ -361,9 +361,13 @@ public class minesweeper
                        }
                    }
 
-                   if ((this.mines[i][j-1]) != 9 && validIndex(i,j-1))
+                   if (validIndex(i,j-1))
                    {
-                       this.mines[i][j-1]++;
+                       //If valid index
+                       if ((this.mines[i][j-1]) != 9) {
+                           //If not mine
+                           this.mines[i][j-1]++;
+                       }
                    }
 
                    if (validIndex(i+1,j-1))
@@ -375,9 +379,14 @@ public class minesweeper
                        }
                    }
 
-                   if ((this.mines[i-1][j]) != 9 && validIndex(i-1,j))
+                   if (validIndex(i-1,j))
                    {
-                       this.mines[i-1][j]++;
+                       //If valid index
+                       if((this.mines[i-1][j]) != 9){
+                           //If not mine
+                           this.mines[i-1][j]++;
+                       }
+                       
                    }
 
                    if (validIndex(i+1,j))
@@ -389,24 +398,34 @@ public class minesweeper
                        }
                    }
 
-                   if ((this.mines[i-1][j+1]) != 9 && validIndex(i-1,j+1))
+                   if (validIndex(i-1,j+1))
                    {
-                       this.mines[i-1][j+1]++;
+                       if((this.mines[i-1][j+1]) != 9) {
+                           //If not mine
+                           this.mines[i-1][j+1]++;
+                       }
                    }
 
-                   if ((this.mines[i][j+1]) != 9 && validIndex(i,j+1))
+                   if (validIndex(i,j+1))
                    {
-                       this.mines[i][j+1]++;
+                       //If valid index
+                       if((this.mines[i][j+1]) != 9) {
+                           //If not mine
+                           this.mines[i][j+1]++;
+                       }
                    }
 
-                   if ((this.mines[i+1][j+1]) != 9 && validIndex(i+1,j+1))
+                   if (validIndex(i+1,j+1))
                    {
-                       this.mines[i+1][j+1]++;
+                       //If valid index
+                       if((this.mines[i+1][j+1]) != 9) {
+                           //If not mine
+                           this.mines[i+1][j+1]++;
+                       }
                    } 
                }
             }
         }
-
     }
 
     /** determines if x,y is valid position
