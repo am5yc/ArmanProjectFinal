@@ -237,8 +237,29 @@ public class minesweeper
                 this.status = "Lose";
                 this.tiles[r][c] = 0;
             }
+            else if (getTiles(r, c) != 0 && getTiles(r, c) != 3 && t==3 && getMines(r, c) == 9)
+            {
+                //If flaging mine that is not open and not already flagged
+                this.tiles[r][c] = 3; 
+                this.numFlags++;
+                // check if it won
+                if (this.numFlags == this.numMines)
+                {
+                    this.status = "won";
+                    return;
+                }
+                    
+            }
+            else if (getTiles(r, c) == 3 && t != 3 && getMines(r, c) == 9)
+            {
+                //if unflagging mine
+                this.tiles[r][c] = t;
+                this.numFlags--;
+                
+            }
             //default to set the tile
             this.tiles[r][c] = t;
+            
         }
     }
 
