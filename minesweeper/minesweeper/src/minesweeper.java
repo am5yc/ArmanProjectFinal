@@ -318,7 +318,7 @@ public class minesweeper
         int numMines = 0;
         int rondomNum = 0;
 
-        while (numMines < max && numMines>0 )
+        while (numMines < max)
         {
             for (int i=0; i<this.mines.length; i++)
             {
