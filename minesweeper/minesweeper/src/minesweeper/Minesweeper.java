@@ -292,8 +292,17 @@ public class Minesweeper
 
 	/** Sets all tiles to 1 - closed
 	 */
-	private void resetTiles() {
-		//		add your code here
+	private void resetTiles() 
+        {
+            //reset tiles
+            for (int i=0; i<this.tiles.length; i++)
+            {
+                for (int j=0; j<this.tiles[i].length; j++)
+                {
+                    this.tiles[i][j] = 1;
+                    this.mines[i][j] = 0;
+                }
+            }
 	}
 
 	/** places mines randomly on grid
@@ -301,8 +310,30 @@ public class Minesweeper
 	 * number of mines = (1 + number of columns * number rows) / 10<br>
 	 * minimum number of mines = 1<br>
 	 */
-	private void placeMines() {
-		//		add your code here
+	private void placeMines()
+        {
+            
+            
+            int max = (1+((getRows()*getCols())/10));
+            int numMines = 0;
+            int rondomNum = 0;
+            
+            while (numMines < max && numMines>0 )
+            {
+                for (int i=0; i<this.mines.length; i++)
+                    {
+                        for (int j=0; j<this.mines[i].length; j++)
+                        {
+                             rondomNum = (int) (Math.random() * 99) + 1;
+                            
+                            if ( rondomNum == 100 && (this.mines[i][j]) != 9 && numMines < max )
+                            {
+                                this.mines [i][j] = 9;
+                            }
+                        }
+                    }
+            }
+            
 	}
 
 	/** calculates clue values and updates
@@ -310,8 +341,57 @@ public class Minesweeper
 	 * integer value 9 represents a mine<br>
 	 * clue values will be 0 ... 8<br>
 	 */
-	private void calculateClues() {
-		//		add your code here
+	private void calculateClues()
+        {
+            for (int i=0; i<this.mines.length; i++)
+                    {
+                        for (int j=0; j<this.mines[i].length; j++)
+                        {
+                           if ((this.mines[i][j]) == 9)
+                           {
+                               if ((this.mines[i-1][j-1]) != 9 && validIndex(i-1,j-1))
+                               {
+                                   this.mines[i-1][j-1]++;
+                               }
+                               
+                               if ((this.mines[i][j-1]) != 9 && validIndex(i,j-1))
+                               {
+                                   this.mines[i][j-1]++;
+                               }
+                               
+                               if ((this.mines[i+1][j-1]) != 9 && validIndex(i+1,j-1))
+                               {
+                                   this.mines[i+1][j-1]++;
+                               }
+                               
+                               if ((this.mines[i-1][j]) != 9 && validIndex(i-1,j))
+                               {
+                                   this.mines[i-1][j]++;
+                               }
+                               
+                               if ((this.mines[i+1][j]) != 9 && validIndex(i+1,j))
+                               {
+                                   this.mines[i+1][j]++;
+                               }
+                               
+                               if ((this.mines[i-1][j+1]) != 9 && validIndex(i-1,j+1))
+                               {
+                                   this.mines[i-1][j+1]++;
+                               }
+                               
+                               if ((this.mines[i][j+1]) != 9 && validIndex(i,j+1))
+                               {
+                                   this.mines[i][j+1]++;
+                               }
+                               
+                               if ((this.mines[i+1][j+1]) != 9 && validIndex(i+1,j+1))
+                               {
+                                   this.mines[i+1][j+1]++;
+                               } 
+                           }
+                        }
+                    }
+
 	}
 
 	/** determines if x,y is valid position
@@ -320,10 +400,15 @@ public class Minesweeper
 	 * @return true if valid position on board,
 	 * false if not valid board position
 	 */
-	private boolean validIndex(int x, int y) {
-		//add your code here
-
-		return true; //this line must be modified
+	private boolean validIndex(int x, int y) 
+        {
+		
+            if (x<0 || y<0 || x>=9 || y>=9)
+            {
+                return false;
+            } 
+            return true;
+		
 	}
 
 	/** Level 2 - game won status
