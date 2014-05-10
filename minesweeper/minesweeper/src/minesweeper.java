@@ -15,7 +15,8 @@
 public class minesweeper
 
 {
-
+    private boolean gameWon;
+    
     /** mine and clue values, 9 - mine, 0-8 clue values
      *
      */
@@ -227,6 +228,12 @@ public class minesweeper
                 this.markTile(r+1,c,0);
                 this.markTile(r+1,c+1,0);
             }
+            else if (getTiles(r, c) == 1 && t==0 && getMines(r, c) == 9)
+            {
+                // if mine & oppen
+                this.status = "Lose";
+                this.tiles[r][c] = 0;
+            }
             //default to set the tile
             this.tiles[r][c] = t;
         }
@@ -269,7 +276,6 @@ public class minesweeper
      */
     public String toStringBoard() {
         String result = "";
-
         for (int r = 0; r < tiles.length; r++) {
                 for (int c = 0; c < tiles[r].length; c++) {
                         result += this.getBoard(r, c);
@@ -310,6 +316,8 @@ public class minesweeper
      */
     private void resetTiles() 
     {
+        this.status = "play";
+        this.gameWon = false;
         //reset tiles
         for (int i=0; i<this.tiles.length; i++)
         {
@@ -467,8 +475,7 @@ public class minesweeper
      */
     private boolean gameWon()
     {
-        //add your code here
-        return false; //this line must be modified
+        return this.gameWon;
     }
 
 }
