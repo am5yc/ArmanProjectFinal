@@ -327,11 +327,11 @@ public class minesweeper
                      rondomNum = (int) (Math.random() * 100) + 1;
 
                     if ( rondomNum == 100 &&
-                        (this.mines[i][j]) != 9 && numMines < max )
-                        numMines++;
-                        
+                            (this.mines[i][j]) != 9 && numMines < max ) 
                     {
+                        //if mine
                         this.mines [i][j] = 9;
+                        numMines++;
                     }
                 }
             }
