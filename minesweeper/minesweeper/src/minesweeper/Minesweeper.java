@@ -52,28 +52,28 @@ public class Minesweeper
 	 * @param newCols number of columns for grid<br>
 	 */
 	public Minesweeper(int newRows, int newCols) {
-		initGame(newRows, newCols);
+            initGame(newRows, newCols);
 	}
 
 	/** Level 2 - game status
 	 * @return "play", "win", or "lose"
 	 */
 	public String getStatus() {
-		return status;
+            return status;
 	}
 
 	/** number of rows for board
 	 * @return number of rows
 	 */
 	public int getRows() {
-		return mines.length;
+            return mines.length;
 	}
 
 	/** number of columns for board
 	 * @return number of columns
 	 */
 	public int getCols() {
-		return mines[0].length;
+            return mines[0].length;
 	}
 
 	/** value of the mines array at r,c<br>
@@ -83,11 +83,11 @@ public class Minesweeper
 	 * @return value of mines array, -1 if invalid
 	 */
 	public int getMines(int r, int c) {
-		if (validIndex(r, c)) {
-			return mines[r][c];
-		} else {
-			return -1;
-		}
+            if (validIndex(r, c)) {
+                    return mines[r][c];
+            } else {
+                    return -1;
+            }
 	}
 
 	/** value of the tiles array at r,c
@@ -97,11 +97,11 @@ public class Minesweeper
 	 * @return value of tiles array, -1 if invalid
 	 */
 	public int getTiles(int r, int c) {
-		if (validIndex(r, c)) {
-			return tiles[r][c];
-		} else {
-			return -1;
-		}
+            if (validIndex(r, c)) {
+                    return tiles[r][c];
+            } else {
+                    return -1;
+            }
 	}
 
 
@@ -127,57 +127,57 @@ public class Minesweeper
 	 */
 	public char getBoard(int r, int c)
         {
-		int tile = this.getTiles(r, c);
-                if (tile == 1)
+            int tile = this.getTiles(r, c);
+            if (tile == 1)
+            {
+                // if closed
+                return 'X';
+            }
+            else if (tile == 0)
+            {
+                // if open
+                switch (this.getMines(r, c))
                 {
-                    // if closed
-                    return 'X';
+                    case 0:
+                        return ' ';
+                    case 1:
+                        return '1';
+                    case 2:
+                        return '2';
+                    case 3:
+                        return '3';
+                    case 4:
+                        return '4';
+                    case 5:
+                        return '5';
+                    case 6:
+                        return '6';
+                    case 7:
+                        return '7';
+                    case 8:
+                        return '8';
+                    case 9:
+                        return '*';
+                    default:
+                        return '!';
+                        // in case of error!
                 }
-                else if (tile == 0)
-                {
-                    // if open
-                    switch (this.getMines(r, c))
-                    {
-                        case 0:
-                            return ' ';
-                        case 1:
-                            return '1';
-                        case 2:
-                            return '2';
-                        case 3:
-                            return '3';
-                        case 4:
-                            return '4';
-                        case 5:
-                            return '5';
-                        case 6:
-                            return '6';
-                        case 7:
-                            return '7';
-                        case 8:
-                            return '8';
-                        case 9:
-                            return '*';
-                        default:
-                            return '!';
-                            // in case of error!
-                    }
-                }
-                
-                else if (tile == 2)
-                {
-                    // if question mark
-                    return '?';
-                }
-                
-                else if (tile == 3)
-                {
-                    // if mine
-                    return 'F';
-                }
-                
-        
-		return '!'; //error retunr in case of error
+            }
+
+            else if (tile == 2)
+            {
+                // if question mark
+                return '?';
+            }
+
+            else if (tile == 3)
+            {
+                // if mine
+                return 'F';
+            }
+
+
+            return '!'; //error retunr in case of error
 	}
         
         
@@ -220,48 +220,48 @@ public class Minesweeper
 	 * @return mines array as a String
 	 */
 	public String toStringMines() {
-		String result = "\n";
+            String result = "\n";
 
-		for (int r = 0; r < mines.length; r++) {
-			for (int c = 0; c < mines[r].length; c++)
-				result = result + mines[r][c];
+            for (int r = 0; r < mines.length; r++) {
+                    for (int c = 0; c < mines[r].length; c++)
+                            result = result + mines[r][c];
 
-			result += "\n";
-		}
+                    result += "\n";
+            }
 
-		return result;
+            return result;
 	}
 
 	/** tiles array as String
 		 * @return mines array as a String
 		 */
 	public String toStringTiles() {
-		String result = "\n";
+            String result = "\n";
 
-		for (int r = 0; r < mines.length; r++) {
-			for (int c = 0; c < mines[r].length; c++)
-				result = result + tiles[r][c];
+            for (int r = 0; r < mines.length; r++) {
+                    for (int c = 0; c < mines[r].length; c++)
+                            result = result + tiles[r][c];
 
-			result += "\n";
-		}
+                    result += "\n";
+            }
 
-		return result;
+            return result;
 	}
 
 	/** game board array as String
 	 * @return game board as String
 	 */
 	public String toStringBoard() {
-		String result = "";
+            String result = "";
 
-		for (int r = 0; r < tiles.length; r++) {
-			for (int c = 0; c < tiles[r].length; c++) {
-				result += this.getBoard(r, c);
-			}
-			result += "\n"; //advance to next line
-		}
+            for (int r = 0; r < tiles.length; r++) {
+                    for (int c = 0; c < tiles[r].length; c++) {
+                            result += this.getBoard(r, c);
+                    }
+                    result += "\n"; //advance to next line
+            }
 
-		return result;
+            return result;
 	}
 
 	/** create mines & tiles array
@@ -271,23 +271,23 @@ public class Minesweeper
 	 * @param newCols number of columns for grid
 	 */
 	private void initGame(int newRows, int newCols) {
-		//allocate space for mines and tiles array
-		if ((newRows >= 1) && (newCols >= 1)) {
-			mines = new int[newRows][newCols];
-			tiles = new int[newRows][newCols];
+            //allocate space for mines and tiles array
+            if ((newRows >= 1) && (newCols >= 1)) {
+                mines = new int[newRows][newCols];
+                tiles = new int[newRows][newCols];
 
-			//init tiles array
-			resetTiles();
+                //init tiles array
+                resetTiles();
 
-			//place mines
-			placeMines();
+                //place mines
+                placeMines();
 
-			//update clues
-			calculateClues();
+                //update clues
+                calculateClues();
 
-			//set game status
-			status = "play";
-		}
+                //set game status
+                status = "play";
+            }
 	}
 
 	/** Sets all tiles to 1 - closed
