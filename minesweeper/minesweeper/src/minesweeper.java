@@ -212,6 +212,7 @@ public class minesweeper
             }
             else if (getTiles(r, c) == 1  && t == 0 && getMines(r, c) == 0)
             {
+                this.tiles[r][c] = 0;
                 this.markTile(r-1,c-1,0);
                 this.markTile(r-1,c,0);
                 this.markTile(r-1,c+1,0);
@@ -221,27 +222,9 @@ public class minesweeper
                 this.markTile(r+1,c-1,0);
                 this.markTile(r+1,c,0);
                 this.markTile(r+1,c+1,0);
-
-            this.tiles[r][c] = t;
-        }
-        else if (getTiles(r, c) == 1  && t == 0)
-        {
-            this.markTile(r-1,c-1,0);
-            this.markTile(r-1,c,0);
-            this.markTile(r-1,c+1,0);
-            this.markTile(r,c-1,0);
-            this.markTile(r,c,0);
-            this.markTile(r,c+1,0);
-            this.markTile(r+1,c-1,0);
-            this.markTile(r+1,c,0);
-            this.markTile(r+1,c+1,0);  
-
             }
-            
             this.tiles[r][c] = t;
-
         }
-
     }
 
     /** mines array as String
