@@ -324,7 +324,7 @@ public class minesweeper
             {
                 for (int j=0; j<this.mines[i].length; j++)
                 {
-                     rondomNum = (int) (Math.random() * 99) + 1;
+                     rondomNum = (int) (Math.random() * 100) + 1;
 
                     if ( rondomNum == 100 &&
                             (this.mines[i][j]) != 9 && numMines < max )
