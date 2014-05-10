@@ -213,6 +213,19 @@ public class minesweeper
 
             this.tiles[r][c] = t;
         }
+        else if (getTiles(r, c) == 1  && t == 0)
+        {
+            this.markTile(r-1,c-1,0);
+            this.markTile(r-1,c,0);
+            this.markTile(r-1,c+1,0);
+            this.markTile(r,c-1,0);
+            this.markTile(r,c,0);
+            this.markTile(r,c+1,0);
+            this.markTile(r+1,c-1,0);
+            this.markTile(r+1,c,0);
+            this.markTile(r+1,c+1,0);
+            
+        }
 
     }
 
