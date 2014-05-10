@@ -222,7 +222,6 @@ public class minesweeper
                 this.markTile(r+1,c,0);
                 this.markTile(r+1,c+1,0);
 
-<<<<<<< HEAD
             this.tiles[r][c] = t;
         }
         else if (getTiles(r, c) == 1  && t == 0)
@@ -236,11 +235,11 @@ public class minesweeper
             this.markTile(r+1,c-1,0);
             this.markTile(r+1,c,0);
             this.markTile(r+1,c+1,0);  
-=======
+
             }
             
             this.tiles[r][c] = t;
->>>>>>> 2fdb24158c7909c29bb3a979a26408ce00ea5ed3
+
         }
 
     }
