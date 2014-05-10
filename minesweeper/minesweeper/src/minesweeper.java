@@ -246,6 +246,7 @@ public class minesweeper
                 if (this.numFlags == this.numMines)
                 {
                     this.status = "won";
+                    this.gameWon = true;
                     return;
                 }
                     
