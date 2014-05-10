@@ -202,16 +202,20 @@ public class minesweeper
             //add your code here
         if (validIndex(r, c))
         {
+            //if valid
             if (getTiles(r, c) == 0)
             {
+                // if open
                 return;
             }
             else if (getTiles(r, c) == 3 && t == 0)
             {
+                //if flagged and closed
                 return;
             }
             else if (getTiles(r, c) == 1  && t == 0 && getMines(r, c) == 0)
             {
+                //If open and no mines
                 this.tiles[r][c] = 0;
                 this.markTile(r-1,c-1,0);
                 this.markTile(r-1,c,0);
@@ -223,6 +227,7 @@ public class minesweeper
                 this.markTile(r+1,c,0);
                 this.markTile(r+1,c+1,0);
             }
+            //default to set the tile
             this.tiles[r][c] = t;
         }
     }
