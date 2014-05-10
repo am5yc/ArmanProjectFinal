@@ -213,3 +213,7 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+/minesweeper/minesweeper/nbproject/private/
+/minesweeper/minesweeper/build/
+/minesweeper/minesweeper/dist/
